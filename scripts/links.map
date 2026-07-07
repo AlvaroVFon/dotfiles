@@ -1,0 +1,9 @@
+# source:target
+
+config/zsh/.zshrc:.zshrc
+config/nvim:.config/nvim
+config/starship/starship.toml:.config/starship.toml
+config/tmux/.tmux.conf:.tmux.conf
+config/ghostty/config.ghostty:.config/ghostty/config.ghostty
+
+

@@ -1,0 +1,27 @@
+# Font
+font-family = FiraCode Nerd Font
+font-size = 12
+
+# Theme
+theme = Catppuccin Mocha
+
+# Window
+window-padding-x = 8
+window-padding-y = 8
+window-width= 155
+window-height = 45
+
+# Cursor
+cursor-style = block
+
+# Shell
+shell-integration = zsh
+
+# Clipboard
+copy-on-select = false
+
+# Confirm before closing
+confirm-close-surface = true
+
+# Tmux by default
+command = tmux new-session -A -s main

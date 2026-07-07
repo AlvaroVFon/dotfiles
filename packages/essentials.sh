@@ -17,4 +17,8 @@ sudo dnf install -y \
   unzip \
   git
 
+if command -v bat >/dev/null; then
+  bat cache --build &>/dev/null || true
+fi
+
 echo "✓ Essentials installed"

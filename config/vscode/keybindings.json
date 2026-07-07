@@ -6,5 +6,9 @@
   {
     "key": "ctrl ctrl",
     "command": "workbench.action.terminal.toggleTerminal"
+  },
+  {
+    "key": "shift+q",
+    "command": "workbench.action.toggleActivityBarVisibility"
   }
 ]

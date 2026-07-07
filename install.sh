@@ -12,7 +12,7 @@ require_sudo() {
   done 2>/dev/null &
 }
 
-readonly ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+readonly ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null && pwd -P)"
 readonly PACKAGES_DIR="${ROOT_DIR}/packages"
 
 MODULES=(
@@ -40,6 +40,12 @@ run_module() {
 }
 
 main() {
+  if [[ "${1:-}" == "--update" ]]; then
+    echo "==> Running update..."
+    bash "${ROOT_DIR}/update.sh"
+    return
+  fi
+
   require_sudo
 
   if [[ $# -eq 0 ]]; then

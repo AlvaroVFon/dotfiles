@@ -31,6 +31,7 @@ MODULES=(
   rust
   go
   docker
+  spotify
 )
 
 run_module() {

@@ -5,5 +5,8 @@ config/nvim:.config/nvim
 config/starship/starship.toml:.config/starship.toml
 config/tmux/.tmux.conf:.tmux.conf
 config/ghostty/config.ghostty:.config/ghostty/config.ghostty
+config/vscode/settings.json:.config/Code/User/settings.json
+config/vscode/keybindings.json:.config/Code/User/keybindings.json
+config/vscode/extensions.json:.config/Code/User/extensions.json
 
 

@@ -22,6 +22,7 @@ MODULES=(
   ghostty
   lazygit
   yazi
+  vscode
 )
 
 run_module() {

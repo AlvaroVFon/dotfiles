@@ -1,0 +1,17 @@
+{
+  "recommendations": [
+    "Catppuccin.catppuccin-vsc",
+    "Catppuccin.catppuccin-vsc-icons",
+    "miguelsolorio.fluent-icons",
+    "asvetliakov.vscode-neovim",
+    "esbenp.prettier-vscode",
+    "oxc.oxc-vscode",
+    "ms-python.python",
+    "adpyke.codesnap",
+    "EditorConfig.EditorConfig",
+    "eamodio.gitlens",
+    "usernamehw.errorlens",
+    "YoavBls.pretty-ts-errors",
+    "golang.go"
+  ]
+}

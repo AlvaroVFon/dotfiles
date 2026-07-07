@@ -1,0 +1,24 @@
+{
+  "workbench.editor.wrapTabs": true,
+  "workbench.startupEditor": "none",
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.iconTheme": "catppuccin-mocha",
+  "editor.formatOnSave": true,
+  "editor.fontFamily": "FiraCode Nerd Font",
+  "window.zoomLevel": 2,
+  "editor.fontSize": 13,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontLigatures": true,
+  "editor.minimap.enabled": false,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.smoothScrolling": true,
+  "editor.tabSize": 2,
+  "editor.cursorBlinking": "blink",
+  "terminal.integrated.fontFamily": "FiraCode Nerd Font",
+  "terminal.integrated.cursorBlinking": true,
+  "git.autofetch": true,
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "workbench.productIconTheme": "fluent-icons"
+}

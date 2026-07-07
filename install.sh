@@ -16,6 +16,9 @@ readonly ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null && pwd -P)"
 readonly PACKAGES_DIR="${ROOT_DIR}/packages"
 
 MODULES=(
+  rpmfusion
+  essentials
+  fonts
   zsh
   nvim
   tmux
@@ -23,6 +26,11 @@ MODULES=(
   lazygit
   yazi
   vscode
+  node
+  python
+  rust
+  go
+  docker
 )
 
 run_module() {

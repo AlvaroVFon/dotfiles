@@ -105,3 +105,5 @@ export PATH=/home/alvarovillamarin/.opencode/bin:$PATH
 if command -v tmux >/dev/null && [[ -z "$TMUX" ]]; then
   exec tmux new-session -A -s main
 fi
+
+. "$HOME/.local/bin/env"

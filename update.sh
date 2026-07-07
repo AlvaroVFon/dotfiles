@@ -68,6 +68,39 @@ update_starship() {
   fi
 }
 
+update_node() {
+  if command -v fnm >/dev/null; then
+    echo "==> Updating Node.js..."
+    eval "$(fnm env)"
+    fnm install --lts
+  fi
+}
+
+update_python() {
+  if command -v pipx >/dev/null; then
+    echo "==> Updating pipx packages..."
+    pipx upgrade-all 2>/dev/null || true
+  fi
+  if command -v uv >/dev/null; then
+    echo "==> Updating uv..."
+    uv self update 2>/dev/null || true
+  fi
+}
+
+update_rust() {
+  if command -v rustup >/dev/null; then
+    echo "==> Updating Rust..."
+    rustup update stable 2>/dev/null || true
+  fi
+}
+
+update_fonts() {
+  if fc-list | grep -qi "FiraCode Nerd Font" 2>/dev/null; then
+    echo "==> Updating fonts cache..."
+    fc-cache -f 2>/dev/null || true
+  fi
+}
+
 main() {
   echo ""
   echo "==> Updating dotfiles..."
@@ -76,6 +109,14 @@ main() {
   update_ohmyzsh
   update_zsh_plugins
   update_starship
+  update_node
+  update_python
+  update_rust
+  update_fonts
+
+  echo ""
+  echo "==> Updating dnf packages..."
+  sudo dnf upgrade --refresh -y
 
   echo ""
   echo "==> Linking dotfiles..."

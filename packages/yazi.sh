@@ -8,4 +8,4 @@ fi
 
 sudo dnf install -y yazi
 
-echo "✓ Ghostty installed"!/usr/bin/env bash
+echo "✓ Yazi installed"

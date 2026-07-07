@@ -16,10 +16,10 @@ link() {
 
   mkdir -p "$(dirname "$target")"
 
-  if [[ -L "$target" || -f "$target" ]]; then
-    rm -f "$target"
-  elif [[ -d "$target" ]]; then
-    rm -rf "$target"
+  if [[ -L "$target" || -f "$target" || -d "$target" ]]; then
+    local backup="${target}.bak.$(date +%Y%m%d%H%M%S)"
+    echo "  → Backing up $target to $backup"
+    mv "$target" "$backup"
   fi
 
   ln -s "$source" "$target"

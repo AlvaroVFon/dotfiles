@@ -22,11 +22,30 @@ else
   else
     echo "==> Installing Docker Desktop..."
 
-    # Remove conflicting Docker CE packages if present
-    if rpm -q docker-ce docker-ce-cli containerd.io docker-compose-plugin &>/dev/null 2>&1; then
-      echo "  -> Removing conflicting Docker CE packages..."
-      sudo dnf remove -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
+    # Podman is pre-installed on Fedora and may conflict
+    if command -v podman >/dev/null; then
+      echo "  ⚠ Podman is installed and may conflict. Remove it if you encounter issues."
+      echo "    -> sudo dnf remove podman podman-compose"
     fi
+
+    # Docker Desktop requires docker-ce-cli as a dependency.
+    # Add Docker's official repository and install it.
+    if ! rpm -q docker-ce-cli &>/dev/null; then
+      echo "  -> Adding Docker CE repository..."
+      sudo dnf install -y dnf-plugins-core curl
+      sudo curl -fsSL https://download.docker.com/linux/fedora/docker-ce.repo \
+        -o /etc/yum.repos.d/docker-ce.repo
+      echo "  -> Installing docker-ce-cli..."
+      sudo dnf install -y docker-ce-cli
+    fi
+
+    # Remove conflicting Docker CE packages (daemon only, keep cli)
+    for pkg in docker-ce containerd.io docker-compose-plugin; do
+      if rpm -q "$pkg" &>/dev/null; then
+        echo "  -> Removing conflicting package: $pkg"
+        sudo dnf remove -y "$pkg"
+      fi
+    done
 
     # Ensure dependencies
     sudo dnf install -y dnf-plugins-core curl
@@ -36,7 +55,12 @@ else
     rpm_file="/tmp/docker-desktop-x86_64.rpm"
 
     echo "  -> Downloading Docker Desktop..."
-    curl -sSL "$rpm_url" -o "$rpm_file"
+    curl -fsSL "$rpm_url" -o "$rpm_file"
+
+    if [[ ! -s "$rpm_file" ]]; then
+      echo "  ❌ Download failed or file is empty."
+      return 1
+    fi
 
     echo "  -> Installing Docker Desktop..."
     sudo dnf install -y "$rpm_file"

@@ -4,9 +4,20 @@ set -euo pipefail
 
 sudo dnf install -y zsh curl git
 
-if [[ "$SHELL" != "$(which zsh)" ]]; then
+ZSH_PATH="$(command -v zsh)"
+
+if ! grep -qx "$ZSH_PATH" /etc/shells 2>/dev/null; then
+  echo "$ZSH_PATH" | sudo tee -a /etc/shells
+fi
+
+if [[ "$SHELL" != "$ZSH_PATH" ]]; then
   echo "Changing default shell to Zsh..."
-  sudo usermod -s "$(which zsh)" "$USER"
+  if command -v chsh >/dev/null; then
+    chsh -s "$ZSH_PATH"
+  else
+    sudo usermod -s "$ZSH_PATH" "$USER"
+  fi
+  echo "  Close session and log back in for the change to take effect."
 fi
 
 if [[ ! -d "$HOME/.oh-my-zsh" ]]; then

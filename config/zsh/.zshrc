@@ -5,4 +5,4 @@ source ~/dev/dotfiles/config/zsh/alias.zsh
 source ~/dev/dotfiles/config/zsh/bindings.zsh
 source ~/dev/dotfiles/config/zsh/tmux.zsh
 
-. "$HOME/.local/bin/env"
+[[ -f "$HOME/.local/bin/env" ]] && . "$HOME/.local/bin/env"

@@ -19,7 +19,8 @@
   "window.zoomLevel": 1,
   "workbench.colorTheme": "Catppuccin Mocha",
   "workbench.editor.wrapTabs": true,
-  "workbench.iconTheme": "catppuccin-mocha",
   "workbench.productIconTheme": "fluent-icons",
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+  "workbench.iconTheme": "catppuccin-mocha",
+  "js/ts.experimental.useTsgo": true
 }

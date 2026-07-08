@@ -13,3 +13,5 @@ config/essentials/bat/themes:.config/bat/themes
 config/essentials/btop/btop.conf:.config/btop/btop.conf
 config/essentials/btop/themes:.config/btop/themes
 config/essentials/fastfetch/config.jsonc:.config/fastfetch/config.jsonc
+config/essentials/environment.d/gtk.conf:.config/environment.d/gtk.conf
+config/essentials/plasma-workspace/env/gtk-im.sh:.config/plasma-workspace/env/gtk-im.sh

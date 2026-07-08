@@ -22,6 +22,3 @@ copy-on-select = false
 
 # Confirm before closing
 confirm-close-surface = true
-
-# Tmux by default
-command = tmux new-session -A -s main

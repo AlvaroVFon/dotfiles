@@ -16,6 +16,12 @@ link() {
 
   mkdir -p "$(dirname "$target")"
 
+  if [[ -L "$target" ]]; then
+    local current_target
+    current_target="$(readlink "$target")"
+    [[ "$current_target" == "$source" ]] && return 0
+  fi
+
   if [[ -L "$target" || -f "$target" || -d "$target" ]]; then
     local backup="${target}.bak.$(date +%Y%m%d%H%M%S)"
     echo "  → Backing up $target to $backup"

@@ -32,6 +32,7 @@ ALL_MODULES=(
   go
   docker
   spotify
+  kinto
 )
 
 run_module() {

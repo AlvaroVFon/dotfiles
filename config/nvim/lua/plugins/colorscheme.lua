@@ -28,6 +28,7 @@
 --           keywords = {},
 --           functions = {},
 --           variables = {},
+--           type = {},
 --         },
 --       })
 --
@@ -86,50 +87,33 @@
 --       colorscheme = "neomodern",
 --     },
 --   },
---return {
+-- return {
+--   {
+--     "kdheepak/monochrome.nvim",
+--     lazy = false,
+--     priority = 1000,
+--   },
+--   {
+--     "LazyVim/LazyVim",
+--     opts = {
+--       colorscheme = "monochrome",
+--     },
+--   },
+-- }
 return {
   {
-    "kdheepak/monochrome.nvim",
+    "idr4n/github-monochrome.nvim",
     lazy = false,
     priority = 1000,
-
-    config = function()
-      require("monochrome").setup({
-        transparent = false,
-        italic_comments = true,
-        bold = false,
-        terminal_colors = true,
-      })
-
-      vim.cmd.colorscheme("monochrome")
-
-      local hl = vim.api.nvim_set_hl
-
-      -- Comentarios discretos
-      hl(0, "Comment", { fg = "#6a6a6a", italic = true })
-
-      -- Variables y parámetros sin color
-      hl(0, "@variable", { link = "Normal" })
-      hl(0, "@variable.parameter", { link = "Normal" })
-      hl(0, "@variable.member", { link = "Normal" })
-
-      -- Funciones sin negrita
-      hl(0, "Function", { bold = false })
-
-      -- Tipos discretos
-      hl(0, "Type", { bold = false })
-
-      -- CursorLine muy sutil
-      hl(0, "CursorLine", { bg = "#1e1e1e" })
-
-      -- Selección
-      hl(0, "Visual", { bg = "#303030" })
-    end,
+    opts = {
+      style = "dark",
+      terminal_colors = true,
+    },
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "monochrome",
+      colorscheme = "github-monochrome",
     },
   },
 }

@@ -8,8 +8,9 @@ theme = GitHub Dark Default
 # Window
 window-padding-x = 8
 window-padding-y = 8
-window-width= 155
+window-width = 155
 window-height = 45
+window-decoration = server
 
 # Cursor
 cursor-style = block

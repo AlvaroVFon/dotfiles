@@ -1,19 +1,19 @@
 -- CATPPUCCIN MOCHA
--- return {
---   { "catppuccin/nvim" },
---   lazy = false,
---   name = "catppuccin",
---   opts = {
---     flavour = "mocha",
---     transparent_background = true,
---   },
---   {
---     "LazyVim/LazyVim",
---     opts = {
---       colorscheme = "catppuccin",
---     },
---   },
--- }
+return {
+  { "catppuccin/nvim" },
+  lazy = false,
+  name = "catppuccin",
+  opts = {
+    flavour = "mocha",
+    transparent_background = true,
+  },
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "catppuccin",
+    },
+  },
+}
 
 -- NO CLOWN FIESTA
 -- return {
@@ -100,20 +100,20 @@
 --     },
 --   },
 -- }
-return {
-  {
-    "idr4n/github-monochrome.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {
-      style = "dark",
-      terminal_colors = true,
-    },
-  },
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "github-monochrome",
-    },
-  },
-}
+-- return {
+--   {
+--     "idr4n/github-monochrome.nvim",
+--     lazy = false,
+--     priority = 1000,
+--     opts = {
+--       style = "dark",
+--       terminal_colors = true,
+--     },
+--   },
+--   {
+--     "LazyVim/LazyVim",
+--     opts = {
+--       colorscheme = "github-monochrome",
+--     },
+--   },
+-- }

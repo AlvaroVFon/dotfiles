@@ -3,7 +3,7 @@ font-family = FiraCode Nerd Font
 font-size = 12
 
 # Theme
-theme = GitHub Dark Default
+theme = Catppuccin Mocha
 
 # Window
 window-padding-x = 8

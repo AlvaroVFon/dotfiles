@@ -1,16 +1,24 @@
 -- CATPPUCCIN MOCHA
 return {
-  { "catppuccin/nvim" },
-  lazy = false,
-  name = "catppuccin",
-  opts = {
-    flavour = "mocha",
-    transparent_background = true,
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      flavour = "mocha",
+      transparent_background = true,
+      float = {
+        transparent = true,
+      },
+    },
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      -- Neovim 0.12 ships runtime/colors/catppuccin.vim, which shadows the
+      -- plugin's colors/catppuccin.lua. Use the plugin's dedicated entrypoint.
+      colorscheme = "catppuccin-nvim",
     },
   },
 }
